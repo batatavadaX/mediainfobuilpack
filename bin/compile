@@ -17,8 +17,12 @@ wget https://mediaarea.net/download/binary/mediainfo/20.09/mediainfo_20.09-1_amd
 
 dpkg -x mediainfo.deb $VENDOR_DIR
 
-chmod +x $VENDOR_DIR/usr/bin/mediainfo
+mkdir -p $VENDOR_DIR/vendor
+
+cp $VENDOR_DIR/usr/bin/mediainfo $VENDOR_DIR/vendor/mediainfo
+cp $VENDOR_DIR/usr/lib/* $VENDOR_DIR/vendor
+
 PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:$HOME/vendor/usr/bin/mediainfo"' >> $PROFILE_PATH
+echo 'export PATH="$PATH:$HOME/vendor/mediainfo/mediainfo"' >> $PROFILE_PATH
 

@@ -20,7 +20,7 @@ dpkg -x mediainfo.deb $VENDOR_DIR
 mkdir -p $VENDOR_DIR/mediainfo
 
 cp $VENDOR_DIR/usr/bin/mediainfo $VENDOR_DIR/mediainfo/mediainfo
-cp $VENDOR_DIR/usr/lib/* $VENDOR_DIR/vendor
+cp $VENDOR_DIR/usr/lib/x86_64-linux-gnu/* $VENDOR_DIR/vendor
 
 PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
 mkdir -p $(dirname $PROFILE_PATH)

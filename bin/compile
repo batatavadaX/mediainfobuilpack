@@ -3,5 +3,5 @@
 BUILD_DIR=$1
 VENDOR_DIR="${BUILD_DIR}/vendor"
 
-apt-get install mediainfo
+apt-get update -y
 

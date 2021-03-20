@@ -1,2 +1,4 @@
 #!/bin/sh
 
+
+wget https://mediaarea.net/download/binary/mediainfo/20.09/mediainfo_20.09-1_amd64.Debian_10.deb

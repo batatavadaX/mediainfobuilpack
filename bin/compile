@@ -3,5 +3,21 @@
 BUILD_DIR=$1
 VENDOR_DIR="${BUILD_DIR}/vendor"
 
-apt-get update -y
+mkdir -p $VENDOR_DIR
+
+wget https://mediaarea.net/download/binary/libzen0/0.4.38/libzen0v5_0.4.38-1_amd64.xUbuntu_20.04.deb -O libzen.deb
+
+dpkg -x libzen.deb $VENDOR_DIR
+
+wget https://mediaarea.net/download/binary/libmediainfo0/20.09/libmediainfo0v5_20.09-1_amd64.xUbuntu_20.04.deb -O libmediainfo.deb
+
+dpkg -x libmediainfo.deb $VENDOR_DIR
+
+wget https://mediaarea.net/download/binary/mediainfo/20.09/mediainfo_20.09-1_amd64.Debian_10.deb -O mediainfo.deb
+
+dpkg -x mediainfo.deb $VENDOR_DIR
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:$HOME/vendor/usr/bin/mediainfo"' >> $PROFILE_PATH
 

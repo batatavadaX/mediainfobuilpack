@@ -25,4 +25,4 @@ cp $VENDOR_DIR/usr/lib/x86_64-linux-gnu/* $BUILD_DIR/vendor/mediainfo
 PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:$HOME/vendor/mediainfo/mediainfo"' >> $PROFILE_PATH
-
+echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/vendor/mediainfo"'
